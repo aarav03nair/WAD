@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: rgb(230, 228, 228);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(15, 38, 66);
+    color: white;
+    padding: 10px;
+    align-items: center;
+}
+
+.navbar h1{
+    font-size: 44px;
+}
+
+.navbar button{
+    height: auto;
+    margin: 20px;
+}
+
+.elements{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-inputs{
+    display: flex;
+    gap: 10px;
+}
+
+.hero{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left{
+    width: 50%;
+    font-size: 22px;
+    padding-top: 10px;
+    color: rgb(9, 9, 97);
+
+}
+
+.left{
+    object-fit: cover;
+    padding-left: 60px;
+}
+
+.left img{
+    max-width: 100%;
+    margin-top: 10px;
+  
+}
+.right{
+    padding-top: 10px;
+    padding-left: 40px;
+    width: 50%;
+    color: rgb(9, 9, 97);
+    display: flex;
+    flex-direction: column;
+}
+
+.right p{
+    font-size: 38px;
+    letter-spacing: 3px;
+}
+
+.right input{
+    padding: 4px;
+    margin: 2px;
+}
+
+.right-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}

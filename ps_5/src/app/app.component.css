@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.signup{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    background-color: blanchedalmond;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: burlywood;
+    padding: 20px;
+}
+
+#content{
+    text-align: center;
+}
+
+input{
+    font-size: 20px;
+    padding: 4px;
+    margin: 20px;    
+}
+
+button{
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    font-size: 22px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+button:hover{
+    background-color: white;
+    color: blue;
+    border: 1px solid blue;
+}

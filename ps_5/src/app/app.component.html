@@ -1,0 +1,28 @@
+<div class="signup">
+  <h1>SignUp</h1>
+  <form action="">
+    <input type="text" name="name" [(ngModel)] = "signUpObj.username" placeholder="username">
+    <br>
+    <input type="email" name="email" [(ngModel)] = "signUpObj.email" placeholder="email">
+    <br>
+    <input type="password" name="password" [(ngModel)] = "signUpObj.password" placeholder="password">
+    <br>
+    <button type="submit" (click)="onSignUp()">submit</button>
+  </form>
+  
+</div>
+
+<hr>
+<div class="login">
+  <h1>Login</h1>
+  <form action="">
+    <input type="text" name="email" [(ngModel)] = "loginObj.email" placeholder="email">
+    <br>
+    <input type="password" name="pswd" [(ngModel)] = "loginObj.password" placeholder="password">
+    <br>
+    <button (click)="onLogin()">Login</button>
+  </form>
+</div>
+<hr>
+
+<div id="content"></div>

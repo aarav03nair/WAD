@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #add {
+        /* height: 100px; */
+      }
+      #addstud {
+        display: flex;
+        flex-direction: column;
+        /* width: 40%;
+        height: 100px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="add">
+      <form action="" id="addstud">
+        <input type="text" name="Name" placeholder="Enter Name" />
+        <input type="text" name="RollNo" placeholder="Enter Roll Number" />
+        <input type="text" name="WAD" placeholder="Enter WAD Marks" />
+        <input type="text" name="DSBDA" placeholder="Enter DSBDA Marks" />
+        <input type="text" name="CNS" placeholder="Enter CNS Marks" />
+        <input type="text" name="CC" placeholder="Enter CC Marks" />
+        <input type="text" name="AI" placeholder="Enter AI Marks" />
+
+        <button type="submit">submit</button>
+      </form>
+    </div>
+
+    <div class="display">
+      <button onclick="getdata()">get all</button>
+      <table style="width: 100vw">
+        <thead>
+          <tr>
+            <td>Sr.</td>
+            <td>Name</td>
+            <td>Roll No</td>
+            <td>WAD</td>
+            <td>DSBDA</td>
+            <td>CNS</td>
+            <td>CC</td>
+            <td>AI</td>
+          </tr>
+        </thead>
+        <tbody id="allData"></tbody>
+      </table>
+    </div>
+
+    <br />
+    <br />
+  </body>
+  <script>
+    document.getElementById("addstud").addEventListener("submit", async (e) => {
+      try {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const formDataObj = {};
+        formData.forEach((value, key) => {
+          formDataObj[key] = value;
+        });
+
+        const response = await fetch("http://localhost:8000/student/add", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formDataObj),
+        });
+        if (response.ok) {
+          alert("addedsucesfully");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    });
+
+    const getdata = async () => {
+      try {
+        const data = await fetch("http://localhost:8000/student/");
+        const info = await data.json();
+        console.log(info);
+        console.log(data);
+        const tble = document.getElementById("allData");
+        tble.innerHTML = " ";
+        console.log(data);
+        info.data.map((item, index) => {
+          const tr = document.createElement("tr");
+          const sr = document.createElement("td");
+          sr.innerHTML = index + 1;
+
+          const Name = document.createElement("td");
+          Name.innerHTML = item.Name;
+
+          const RollNo = document.createElement("td");
+          RollNo.innerHTML = item.RollNo;
+
+          const WAD = document.createElement("td");
+          WAD.innerHTML = item.WAD;
+
+          const DSBDA = document.createElement("td");
+          DSBDA.innerHTML = item.DSBDA;
+
+          const CNS = document.createElement("td");
+          CNS.innerHTML = item.CNS;
+
+          const CC = document.createElement("td");
+          CC.innerHTML = item.CC;
+
+          const AI = document.createElement("td");
+          AI.innerHTML = item.AI;
+
+          tr.appendChild(sr);
+          tr.appendChild(Name);
+          tr.appendChild(RollNo);
+          tr.appendChild(WAD);
+          tr.appendChild(DSBDA);
+          tr.appendChild(CNS);
+          tr.appendChild(CC);
+          tr.appendChild(AI);
+
+          tble.append(tr);
+        });
+      } catch (err) {
+        console.log("not dded");
+      }
+    };
+  </script>
+</html>

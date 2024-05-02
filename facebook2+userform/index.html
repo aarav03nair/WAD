@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form class="outer">
+      <table class="tble">
+        <thead class="header">
+          <tr class="headrow">
+            <td>User Form</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row">
+            <td class="left">Enter Name</td>
+            <td class="right"><input type="text" /></td>
+          </tr>
+
+          <tr class="row">
+            <td class="left">Enter Password</td>
+            <td class="right"><input type="password" /></td>
+          </tr>
+
+          <tr class="row">
+            <td class="left">Enter Password</td>
+            <td class="right">
+              <textarea type="text" rows="5" cols="30"> </textarea>
+            </td>
+          </tr>
+
+          <tr class="row">
+            <td class="left">Enter Password</td>
+            <td class="radioButtons">
+              <div>
+                <input type="checkbox" name="Hockey" id="Hockey" />
+                <label for="Hockey">Hockey</label>
+              </div>
+              <div>
+                <input type="checkbox" name="Football" id="Football" />
+                <label for="Football">Football</label>
+              </div>
+              <div>
+                <input type="checkbox" name="Badminton" id="Badminton" />
+                <label for="Badminton">Badminton</label>
+              </div>
+              <div>
+                <input type="checkbox" name="Criket" id="Cricket" />
+                <label for="Cricket">Cricket</label>
+              </div>
+              <div>
+                <input type="checkbox" name="Volleyball" id="Volleyball" />
+                <label for="Volleyball">Volleyball</label>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="row">
+            <td class="left">Gender</td>
+            <td class="right">
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">Male</label>
+
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Female</label>
+            </td>
+          </tr>
+
+          <tr class="row">
+            <td class="left">Select ur age</td>
+            <td class="right">
+              <select class="ageselect" name="age" id="age">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr class="row fileInputRow">
+            <td class="fileInput">
+              <input type="file" />
+            </td>
+          </tr>
+
+          <tr class="row">
+            <td class="buttons">
+              <button>Click Me</button>
+              <button type="reset">Reset</button>
+              <button type="submit">Submit form</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </body>
+</html>
